@@ -1,0 +1,16 @@
+[Unit]
+Description=Raspberry Pi Camera 1 streaming service
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+ExecStart=/usr/bin/libcamera-vid --camera 0 -n --inline --listen -t 0 --width 640 --height 480 --framerate 15 --vflip --hflip -o tcp://0.0.0.0:5555
+
+Restart=always
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
