@@ -1,0 +1,30 @@
+[package]
+name = "motor_proxy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rclrs = "*"
+geometry_msgs = "5.3.5"
+sensor_msgs = "5.3.5"
+
+tokio = { version = "1.28", features = ["rt-multi-thread", "macros"] }
+tokio-tungstenite = "0.17"
+
+# Needed for .next() on WebSocket streams
+futures-util = "0.3"
+
+# JSON
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[patch.crates-io]
+geometry_msgs = { path = "/home/pi/Documents/workspace/install/geometry_msgs/share/geometry_msgs/rust" }
+sensor_msgs = { path = "/home/pi/Documents/workspace/install/sensor_msgs/share/sensor_msgs/rust" }
+
+builtin_interfaces = { path = "/home/pi/Documents/workspace/install/builtin_interfaces/share/builtin_interfaces/rust" }
+std_msgs = { path = "/home/pi/Documents/workspace/install/std_msgs/share/std_msgs/rust" }
+unique_identifier_msgs = { path = "/home/pi/Documents/workspace/install/unique_identifier_msgs/share/unique_identifier_msgs/rust" }
+action_msgs = { path = "/home/pi/Documents/workspace/install/action_msgs/share/action_msgs/rust" }
+service_msgs = { path = "/home/pi/Documents/workspace/install/service_msgs/share/service_msgs/rust" }
+
