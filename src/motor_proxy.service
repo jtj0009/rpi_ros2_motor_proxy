@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/home/pi/Documents/motor_proxy/target/debug
-ExecStart=/home/pi/Documents/motor_proxy/target/debug/motor_proxy
+ExecStart=/bin/bash /home/pi/Documents/motor_proxy/start_proxy.sh
 Restart=on-failure
 
 [Install]
